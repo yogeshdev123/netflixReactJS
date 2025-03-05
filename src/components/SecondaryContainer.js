@@ -7,7 +7,7 @@ const SecondaryContainer = () => {
   //  console.log(movies.popularMovies);
   return (
     <div className=" bg-black">
-    <div className="-mt-52 pl-12 relative z-20">
+    <div className="mt-0 md:-mt-52 pl-4 md:pl-12 relative z-20">
      <MoviesList title={"Now Playing"} movies={movies.nowPlayingMovies}/>
      <MoviesList title={"Trending"} movies={movies.nowPlayingMovies}/>
      <MoviesList title={"Popular"} movies={movies.popularMovies}/>
