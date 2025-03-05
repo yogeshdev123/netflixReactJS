@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addNowPlayingMovies } from '../utilities/moviesSlice';
 import { API_OPTIONS } from '../utilities/constants';
 import { useNavigate } from 'react-router-dom';
 import usePopularMovie from './usePopularMovie';
 
 const useNowPlayingMovies = () => {
+  
    const navigate=useNavigate();
     const dispatch=useDispatch();
   const getNowPlayingMovies=async ()=>{
@@ -17,6 +18,8 @@ const useNowPlayingMovies = () => {
     
   }
     catch(err){
+   
+    
            navigate("/error");
     }
   }

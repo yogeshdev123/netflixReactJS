@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addPopularMovies } from '../utilities/moviesSlice';
 import { API_OPTIONS } from '../utilities/constants';
 import { useNavigate } from 'react-router-dom';
 
 const usePopularMovie = () => {
+  const user=useSelector((store)=>store.user);
     const navigate=useNavigate();
     const dispatch=useDispatch();
   const getPopularMovies=async ()=>{
@@ -15,6 +16,10 @@ const usePopularMovie = () => {
     dispatch(addPopularMovies(json.results))
   }
   catch(err){
+    if(!user){
+      console.log("return");
+      return;}
+      console.log(user)
      navigate("/error");
   }
 }
