@@ -7,7 +7,7 @@ const Error = () => {
   return (
     <>
     <div>Switch to mobile network if u encounter this message</div>
-    <button onClick={()=>{navigate("/")}}>Refresh</button></>
+    <button className='bg-black text-white p-2 rounded-lg inline-block' onClick={()=>{navigate("/")}}>Refresh</button></>
   )
 }
 
